@@ -1,0 +1,250 @@
+/* Reset some default styles for better cross-browser consistency */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set a default font size and family for better readability */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    
+    margin: 0;
+    padding: 0;
+   
+    background-size: cover; /* Adjust to your image size preference */
+    background-repeat: no-repeat;
+    background-position: center center; /* Center the background image */
+  }
+  main{
+    background-image: url('Saved\ Picturers.jpg'); /* Reference the image file in the same folder */
+    }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+
+  .div_main {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden; /* This ensures that the image won't overflow the div */
+    width: calc(33.33% - 10px); /* Adjust the width as needed, considering margins */
+  margin: 5px; /* Add margin between the divs for spacing */
+  box-shadow:3px 2px 2PX 2px black;
+  border-radius:2px;
+  }
+  .div_main:hover{
+    opacity: .3;
+  }
+
+  .div_main:nth-child(4) {
+    width: 100%; /* Make the fourth div take the full width */
+  }
+  
+  .div_main img {
+    max-width: 100%;
+    height: auto; /* This maintains the image's aspect ratio */
+    display: block; /* Removes extra spacing beneath the image */
+  }
+
+
+  .header {
+    display: flex;
+  }
+  
+  .nav {
+    background-color: rgb(0, 128, 128); /* Change to your desired background color */
+    width: 200px; /* Adjust the width as per your preference */
+    padding: 20px;
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .nav li {
+    margin-bottom: 10px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #fff; /* Change to your desired text color */
+    font-size: 16px; /* Adjust the font size as per your preference */
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  /* Additional styles for the main content (adjust as needed) */
+  
+/* Hover effect for navigation links */
+.nav a:hover {
+  color:green; /* Change the color on hover */
+  background-color:white ;
+  border-radius:2px ;
+}
+
+
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 20px;
+    height: 400px; /* Adjust the height to your desired value */
+    overflow: auto; /* Add scrollbars when content exceeds the container height */
+
+}
+
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    width: calc(50% - 20px); /* Adjust the width as needed for your design */
+    margin: auto;
+}
+  
+
+  /* Add media queries to adjust the header styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    .header {
+      padding: 10px;
+    }
+    .nav {
+      flex-direction: column;
+    }
+    .nav a {
+      margin: 10px 0;
+    }
+  }
+  
+  /* Style your main content container */
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Create a responsive layout for the main content */
+  @media screen and (max-width: 768px) {
+    .main-content {
+      padding: 10px;
+    }
+  }
+  
+  /* Style your individual articles */
+  .article {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust article styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    .article {
+      padding: 10px;
+    }
+  }
+  
+/* Style the footer */
+footer {
+  background-color: #333; /* Adjust the background color as needed */
+  color: #fff; /* Text color */
+  padding: 20px 0;
+}
+  /* Center the footer content */
+.container_footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style the footer links */
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #00f; /* Change color on hover */
+}
+
+/* Style the footer social media icons */
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* Make the social media icons larger on hover */
+.footer-social a:hover {
+  font-size: 24px;
+}
+
+@keyframes border-light {
+  0% {
+      border-color:green;
+      box-shadow: 0 0 2px #00ff00;
+  }
+  25% {
+      border-color:greenyellow;
+      box-shadow: 0 0 8px #00ff00;
+  }
+  50% {
+      border-color:rgba(5,50,10,.5);
+      box-shadow: 0 0 0px #00ff00;
+  }
+  75% {
+      border-color:rgba(5, 100,5,.7);
+      box-shadow: 0 0 8px #00ff00;
+  }
+  100% {
+      border-color:rgba(1, 30, 1,.8);
+      box-shadow: 0 0 2px #00ff00;
+  }
+}
+
+/* Style for the footer content and logo containers */
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute space between child elements */
+}
+
+.logo-container {
+  flex: 1; /* Equal flex size for all logo containers */
+  max-width: 50%; /* Make each logo occupy 50% of the container's width */
+  padding: 10px; /* Add some spacing around the logos */
+}
+
+/* Responsive styling for the logos */
+.logo-container img {
+  max-width: 100%; /* Make sure the images don't exceed their container's width */
+  height: auto; /* Maintain the aspect ratio */
+  width: auto\9; /* IE8 support */
+}
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    
+
+    <style>
+
+#countdown {
+            font-size: 36px;
+            color: grey;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f3f3f3;
+            z-index:100;
+            opacity:1;
+            font-family:'Courier New', Courier, monospace;
+        }
+    /* Basic CSS for responsiveness */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    
+    .background {
+            background: url(gettyimages-1140596499-612x612.jpg) no-repeat center center fixed;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust the opacity here */
+            z-index: -1;
+        }
+
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        
+    }
+    h1 {
+    
+        color:white;
+    }
+    h2 {
+        text-align: center;
+        color:black;
+    }
+    .faq-item {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        background-color: #f9f9f9;
+        animation: border-light 3s linear infinite;
+    }
+    .faq-question {
+        font-weight: bold;
+    }
+</style>
+
+
+</head>
+<body>
+    <div class="background"></div>
+    <header class="sidebar">
+        <h1>La Comrade La Stupido Project.</h1>
+        <nav class="sidebar-content">
+            <ul>
+                
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Frequently Asked Questions</a></li>
+                <li><a href="online_jobs.html">Online Jobs</a></li>
+                <li><a href="profile.html">profile</a></li>
+                <li><a href="testimonials.html" >testimonials</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="content">
+
+    
+
+
+<div class="container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <p class="faq-question">1. How do I know my registration was successful?</p>
+        <p>An automated message is directly sent to the phone number you provided within a time lapse of 2 minutes notifiyng you of a <a href="payment.html">Successfull account registration.</a></p>
+    </div>
+    <div class="faq-item">
+        <p class="faq-question">2.How do i find jobs or tasks to do after a successful registration?</p>
+        <p>With the help of artificial intelligence and our able ICT personel,our system usually allocates tasks and jobs to each and every active accounts equally since the system is automated through machine learning.</p>
+    </div>
+    <div class="faq-item">
+        <p class="faq-question">3.How can i access my funds and withdraw them at any time willingly?</p>
+        <p>Upon successful registration an account is automatically created within this website with your profile information updated and from wich you can triger withdrawals at will,this is the same profile where active users get paid after completing each task.</p>
+    </div>
+    <div class="faq-item">
+        <p class="faq-question">4.Where does this website gets all these jobs from?</p>
+        <p>This is via the effort and collaboration of different institutions worldwide,where students,lecturers and other non-teaching staff collaboratively post taks to a common pool for evaluation, thanks to our able ICT department for enabling equal sharing of these tasks to various active account holders for evaluation.</p>
+    </div>
+    <div class="faq-item">
+        <p class="faq-question">5.How secure is my active account?</p>
+        <p>All active accounts are protected as per <span style="font-weight: bolder;color: black;">2010 DATA ACT</span> . An active account remains active until the user logs out or deletes the occount personally,unluckily accounts not fully registered are tempered with immediatly after the user exits the website and one will be required to create account later.This helps in clearing back-logs in our server systems.</p>
+    </div>
+</div>
+
+</main>
+
+
+<div id="countdown"></div> 
+
+</script>
+
+<div id="countdown"></div>
+<script>
+    const countdown = document.getElementById('countdown');
+
+    function updateCountdown() {
+        const targetDate = new Date("2023-11-01 00:00:00");
+
+        const currentDate = new Date();
+        const timeRemaining = targetDate - currentDate;
+
+        if (timeRemaining <= 0) {
+            countdown.innerHTML = 'Deadline has passed';
+        } else {
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+        }
+    }
+
+    // Initial call to set the countdown
+    updateCountdown();
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
+    
+</body>
+</html>

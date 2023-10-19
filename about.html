@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div class="background"></div>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    
+    
+<style>
+    .background {
+            background: url(gettyimages-1140596499-612x612.jpg) no-repeat center center fixed;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust the opacity here */
+            z-index: -1;
+        }
+
+        #countdown {
+            font-size: 36px;
+            color: grey;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f3f3f3;
+            z-index:100;
+            opacity:1;
+            font-family:'Courier New', Courier, monospace;
+        }
+</style>
+</head>
+<body>
+    
+    
+    <header class="sidebar">
+        <h1>La Comrade La Stupido Project.</h1>
+        <nav class="sidebar-content">
+            <ul>
+                
+                <li><a href="#">About</a></li>
+                <li><a href="FAQ.html">Frequently Asked Questions</a></li>
+                <li><a href="online_jobs.html" >Online Jobs</a></li>
+                <li><a href="profile.html">profile</a></li>
+                <li><a href="testimonials.html" >testimonials</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+  <main class="content">
+    
+    <div class="card_container">
+    
+
+        <div class="card">
+        <span 
+        style="font-weight:bolder;
+        font-size: larger;
+         font-family: 'Times New Roman', Times, serif;" >W</span>elcome to NYALUCHU, where opportunities meet ambition. We are dedicated to connecting talented individuals with exciting online job opportunities, transforming dreams into careers. 
+        </div>
+    <br>    
+       
+    <div class="card">
+        <span style="font-weight:bolder;">HOW IT WORKS:</span>We are dedicated to a transparent and equal sharing of tasks amongst fully registered active accounts,job notifications drop on a daily basis with salary range of <span style="font-weight:bolder;color:gold;">{Ksh.500-Ksh25000}</span> per job depending on job intensity. 
+        An individual can secure upto a maximum of two jobs at once.Kindly see the <a href="FAQ.html">Frequently Asked Questions</a> for more info.
+    </div>
+    <br>
+    
+        <div class="card">
+            <span style="font-weight:bolder;">OUR MISSION:</span> 
+        At NYALUCHU, our mission is simple: to empower individuals especially youths from all walks of life to find fulfilling and sustainable online work.<br>
+         We believe that everyone deserves access to the digital job market, and we're here to make it happen.
+        </div>
+        <br>
+
+    
+        <div class="card">
+       <span style="font-weight:bolder;
+       text-decoration: underline;
+       color: rgb(6, 120, 120);" >WHAT SETS US APART.</span> <br><br>
+        
+        1.<span style="font-weight:bolder;">DIVERSE JOB LISTINGS:</span> We curate a wide range of online job listings, from freelance gigs to remote full-time positions, ensuring there's something for everyone.<br>
+        
+        2.<span style="font-weight:bolder;">QUALITY ASSURRANCE:</span> We meticulously vet job listings to ensure they meet our standards of legitimacy and fairness, so you can trust the opportunities you find here.<br>
+        
+        3.<span style="font-weight:bolder;">USER-FRIENDLY EXPERIENCE:</span>  Our platform is designed with you in mind. It's intuitive, easy to navigate, and packed with features to enhance your job search.<br>
+        
+        4.<span style="font-weight:bolder;">PERSONALIZED SUPPORT:</span> We offer guidance and resources to help you excel in the online job market, from crafting the perfect resume to acing interviews.<br>
+        </div>
+    <br>
+
+        
+            <div class="card"> 
+        
+                <span style="font-weight:bolder;">JOIN OUR COMMUNITY:</span>
+        Become a part of our thriving online community today. Whether you're a seasoned professional or just starting your online career journey, we're here to support you every step of the way.
+        </div>
+    <br>
+
+        
+            <div class="card">
+                <span style="font-weight:bolder;">CONTACT US:</span>
+        
+        Got questions or feedback? We're all ears! Reach out to our dedicated support team anytime at <span style="color:green;">bitmap.developers254@gmail.com</span>.
+        
+        At NYALUCHU, your future is just a click away.
+        <!--The below sentence will be a link to take you back to the main website content--> 
+        Start exploring opportunities today!
+        </div>
+    </div>
+  </main>  
+      
+  <div id="countdown"></div>
+
+</script>
+
+<div id="countdown"></div>
+<script>
+    const countdown = document.getElementById('countdown');
+
+    function updateCountdown() {
+        const targetDate = new Date("2023-11-01 00:00:00");
+
+        const currentDate = new Date();
+        const timeRemaining = targetDate - currentDate;
+
+        if (timeRemaining <= 0) {
+            countdown.innerHTML = 'Deadline has passed';
+        } else {
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+        }
+    }
+
+    // Initial call to set the countdown
+    updateCountdown();
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>

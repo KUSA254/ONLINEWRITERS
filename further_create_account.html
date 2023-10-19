@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Loader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loader-message {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .loader-spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .content {
+            display: block;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+
+        
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        fieldset {
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        fieldset:hover {
+            background-color: #f0f0f0;
+        }
+
+        fieldset:hover legend {
+            background-color: #2872a3;
+        }
+
+        .background {
+            background: url(gettyimages-1140596499-612x612.jpg) no-repeat center center fixed;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust the opacity here */
+            z-index: -1;
+        }
+#startLoader{
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#startLoader:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <form id="myForm" action="about.html">
+        <div class="content">
+            <!-- Your content goes here -->
+            <fieldset>
+                <legend>SELECT GENDER</legend>
+                <!-- Your content for the first fieldset here -->
+                <div>
+                    <label for="gender"><h4>Select your gender:</h4></label><br>
+                    <input type="radio" name="gender" id="male" value="male"> Male<br>
+                    <input type="radio" name="gender" id="female" value="female"> Female
+                </div>
+        
+            </fieldset>
+
+            <fieldset>
+                <legend>YOUR SPECIFICATION</legend>
+                <!-- Your content for the second fieldset here -->
+                <div>
+                    <label for="multiple-checkboxes"><h4>Only the first two would be considered:</h4></label><br>
+                    <input type="checkbox" id="option1" value="option1">Online Writing<br>
+                    <input type="checkbox" id="option2" value="option2">Transcription<br>
+                    <input type="checkbox" id="option3" value="option3">Animation and Video Editing<br>
+                    <input type="checkbox" id="option1" value="option1">Graphics Design and Templates<br>
+                    <input type="checkbox" id="option1" value="option1">Social Media Marketing<br>
+                    <input type="checkbox" id="option1" value="option1">Research-Based Writing<br>
+                    <input type="checkbox" id="option1" value="option1">Article Writing<br>
+                    <input type="checkbox" id="option1" value="option1">Data Entry jobs<br>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>ADD DATE OF BIRTH PLEASE</legend>
+                <!-- Your content for the first fieldset here -->
+                <div>
+                    <input type="date">
+                </div>
+        
+            </fieldset>
+
+            <fieldset>
+                <legend>SELECT YOU LEVEL</legend>
+                <!-- Your content for the third fieldset here -->
+                <div>
+                    <label for="single-radio"><h4>In the Online Platform I'm:</h4></label><br>
+                    <input type="radio" name="single-option" id="singleOption1" value="singleOption1"> A Beginer<br>
+                    <input type="radio" name="single-option" id="singleOption2" value="singleOption2">In The Intermediate Level<br>
+                    <input type="radio" name="single-option" id="singleOption3" value="singleOption3">An Expert<br>
+                </div>
+            </fieldset>
+
+     <textarea id="fieldset" placeholder="Write the name of your institution  here."></textarea><br>
+
+            <button id="startLoader" type="button">Finish.</button>
+        </div>
+    </form>
+
+                   <div class="loader" style="display: none;">
+                        <div class="loader-message">
+                              Wait Loading...
+                        <div class="loader-spinner"></div>
+                   </div>
+    
+
+    <script>
+
+        //loader effect
+        const startLoaderButton = document.getElementById('startLoader');
+        const loader = document.querySelector('.loader');
+        const content = document.querySelector('.content');
+        const form = document.getElementById('myForm');
+
+        startLoaderButton.addEventListener('click', function() {
+            content.style.display = 'none';
+            loader.style.display = 'flex';
+
+            // Simulate a delay (you can replace this with actual loading logic)
+            setTimeout(function() {
+                loader.style.display = 'none';
+                content.style.display = 'block';
+                // Submit the form when loading is complete
+                form.submit();
+            }, 3000); // Change 3000 to the desired loading time in milliseconds
+        });
+    </script>
+
+</body>
+</html>
+
+

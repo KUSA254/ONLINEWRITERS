@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+
+
+   
+    <style>
+        /* Basic CSS for responsiveness */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #countdown {
+            font-size: 36px;
+            color: grey;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f3f3f3;
+            z-index:100;
+            opacity:1;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .background {
+            background: url(gettyimages-1140596499-612x612.jpg) no-repeat center center fixed;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust the opacity here */
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+           
+        }
+        h1 {
+        
+            color:white;
+        }
+        .job-item {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #f9f9f9;
+             /* Adding glowing effect */
+             animation: glowing 1.5s infinite;
+        }
+        .job-title {
+            font-weight: bold;
+        }
+        button{
+            border-radius:8px ;
+        }
+
+         /* Define the glowing effect animation */
+         @keyframes glowing {
+            0% {
+                color:steelblue;
+                background-color:rgba(115, 240, 159, 0.5);
+                
+            }
+            50% {
+                color:steelblue;
+                background-color:rgba(125, 243, 61, 0.5);
+            }
+            100% {
+                color:steelblue;
+                background-color:rgba(102, 239, 136, 0.5);
+            }
+        }
+
+        #fixed-image-container {
+            position: fixed;
+            top: 0px; /* Adjust the top position */
+            right: 0px; /* Adjust the right position */
+            width: 100px; /* Adjust the container size */
+            height: 100px; /* Adjust the container size */
+            background-color: #eee; /* Background color of the container */
+            z-index: 999; /* Ensure it's above other content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius:4px;
+        }
+
+        #fixed-image {
+            max-width: 100%; /* Set the image to take up 100% of the container width */
+            max-height: 100%; /* Set the image to take up 100% of the container height */
+        }
+        #ya_heading{
+            color:black;
+            margin: auto;
+        }
+
+    </style>
+
+</head>
+<body>
+    <header class="sidebar">
+        <h1>La Comrade La Stupido Project.</h1>
+        <nav class="sidebar-content">
+            <ul>
+                
+                <li><a href="about.html">About</a></li>
+                <li><a href="FAQ.html" >Frequently Asked Questions</a></li>
+                <li><a href="#" >Online Jobs</a></li>
+                <li><a href="profile.html" >profile</a></li>
+                <li><a href="testimonials.html" >testimonials</a></li>
+        
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+    
+
+    
+    
+        <div class="container">
+            <h2 id="ya_heading">CLICK WHERE APPROPRIATE.</h2>
+
+            <button class="pay_baba"><div class="job-item">
+                <p class="job-title">Online Writing</p>
+                <p>Online writing involves creating content for websites, blogs, articles, or social media. Writers often work as freelancers and can cover a wide range of topics and styles.</p><br>
+               
+            </div></button><br>
+
+            <button class="pay_baba"><div class="job-item">
+                <p class="job-title">Transcription</p>
+                <p>Transcriptionists convert spoken audio into written text. This job requires good listening skills and typing accuracy.Good sound devices like earphones are recommended for good listening.</p>
+            
+            </div></button><br>
+
+            <button class="pay_baba"><div class="job-item">
+                <p class="job-title">Research Jobs</p>
+                <p>Research jobs may involve market research, academic research, or data collection. Researchers gather and analyze information to provide valuable insights.</p>
+            
+            </div></button><br>
+
+            <button class="pay_baba"><div class="job-item">
+                <p class="job-title">Animation</p>
+                <p>Animators create moving images, often for entertainment, advertising, or educational purposes. This field requires creativity and technical skills.</p>
+            
+            </div></button><br>
+
+
+            <button class="pay_baba"><div class="job-item">
+                <p class="job-title">Video Editing</p>
+                <p>Video editors work on post-production tasks, editing and enhancing video footage for various purposes, including filmmaking and online content creation.</p>
+               
+            </div></button><br>
+
+            <button class="pay_baba"><div class="job-item">
+                <p class="job-title">PowerPoint Jobs</p>
+                <p>PowerPoint jobs involve creating visually appealing presentations using Microsoft PowerPoint. This is often required for business and educational purposes.</p>
+               
+            </div></button><br>
+
+            <button class="pay_baba"><div class="job-item">
+                <p class="job-title">MS Word Jobs</p>
+                <p>MS Word jobs typically involve word processing tasks, such as document creation, formatting, and editing using Microsoft Word software.</p>
+               
+            </div></button><br>
+
+            <button class="pay_baba"><div class="job-item">
+                <p class="job-title">Data Entry and Excel Spreadsheet</p>
+                <p>Excel and Data Entry jobs involve entering, managing, and analyzing data using tools like Microsoft Excel. These jobs often require attention to detail and accuracy and can include tasks such as data cleaning, spreadsheet creation, and data validation.</p>
+               
+            </div></button><br>
+        </div>
+
+    </main>
+
+    <script>
+        function showInstructions(button) {
+            const instructions = "Welcome to our platform! This is where you enter your transaction code:\n\n1.Seems like you're almost done with registration process.\n2. In the empty field below enter the transaction code and then click OK, an invalid code won't be accepted.\n3.Still stuck? Click  CANCEL then Click the image at the right corner of your screen to help you with further information.\n4.Once done, wait for account information feedback on the number you initially provided.";
+
+            const userResponse = prompt(instructions, ""); // Empty initial value
+
+            if (userResponse !== null) {
+                // Handle user response (button-specific)
+                alert(`You entered a null or invalid transaction code for ${button.textContent}:as ${userResponse}`);
+            }
+        }
+
+        const buttons = document.querySelectorAll('.pay_baba');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => showInstructions(button));
+        });
+    </script>
+
+    <div id="fixed-image-container">
+     <a href="payment.html"><button><img id="fixed-image" src="OIP (1).jpg" alt="Fixed Image"></button></a>
+    </div>
+    
+
+    <div id="countdown"></div>
+
+</script>
+
+<div id="countdown"></div>
+<script>
+    const countdown = document.getElementById('countdown');
+
+    function updateCountdown() {
+        const targetDate = new Date("2023-11-01 00:00:00");
+
+        const currentDate = new Date();
+        const timeRemaining = targetDate - currentDate;
+
+        if (timeRemaining <= 0) {
+            countdown.innerHTML = 'Deadline has passed';
+        } else {
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+        }
+    }
+
+    // Initial call to set the countdown
+    updateCountdown();
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html> 

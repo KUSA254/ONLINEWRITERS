@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0074d9;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        .instructions {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+
+        .background {
+            background: url(gettyimages-1140596499-612x612.jpg) no-repeat center center fixed;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust the opacity here */
+            z-index: -1;
+        }
+        
+        .DISCLAIMER{
+            color:red;
+        }
+
+        #fixed-image-container {
+            position: fixed;
+            top: 0px; /* Adjust the top position */
+            right: 0px; /* Adjust the right position */
+            width: 100px; /* Adjust the container size */
+            height: 100px; /* Adjust the container size */
+            background-color: #eee; /* Background color of the container */
+            z-index: 999; /* Ensure it's above other content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius:4px;
+        }
+
+        #fixed-image {
+            max-width: 100%; /* Set the image to take up 100% of the container width */
+            max-height: 100%; /* Set the image to take up 100% of the container height */
+        }
+        #countdown {
+            font-size: 36px;
+            color: grey;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f3f3f3;
+            z-index:100;
+            opacity:1;
+            font-family:'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+
+    <header>
+        <h1>Alice Ambiche.</h1>
+        <h2>Admin.</h2>
+        <h3>ICT Consoltant</h3>
+        <h4>Mass Media University.</h4>
+    </header>
+    <div class="container">
+        <p>This is instruction partaining payment of membership fee step-by-step guide.</p>
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <p>
+        <ul>
+                <li>
+                Use <span style="color:green;font-weight: bold;font-family:'Times New Roman', Times, serif;">M</span>-<span style="color:green;">pesa</span> method or any other SEND MONEY platforms.
+                </li>
+                
+            </ul>
+            </p>
+
+            <p>
+                <ul>
+                    <li>
+                    Send  <span style="color:black;font-weight: bold">Ksh.199</span>   <span style="text-decoration: line-through  black 2px;">Ksh.250</span>  to <span style="color:black;font-weight:bolder;">0799980729</span> -Alice A.
+                    </li>
+                </ul>
+            </p>
+
+            <p>
+                <ul>
+                    <li>
+                    <span style="text-decoration: underline green 3px;">Copy transaction code</span> for the transaction for example <span style="color: black; font-weight: bolder;" >RJH5P9JAGV,</span>and use it to sign up as an active member.
+                    </li>
+                </ul>
+            </p>
+
+            <p>
+                <ul>
+                    <li>
+                    You will receive one time notification within 2 minutes that you're registered with la comrade la stupido.
+                    </li>
+                </ul>
+            </p> 
+
+            <p>
+                <ul>
+                    <li>
+                    The main reason for registration fee is majorly to regulate and organize online workers systematically and also allows for automatic allocation of tasks as the process is machine operated,only active members are recognised in our databases,the fee also help us stiffen our ICT consoltant team who dedicate their entire time towards the success of the platform.
+                    </li>
+                </ul>
+            </p>
+
+            <p class="DISCLAIMER">             
+             <span>
+            <span style="font-weight: bolder;">DISCLAIMER::</span> <span style="color:rgb(200, 30,20);">the provided number act as the Admin. Transactions outside this border shall not be accounted for.</span> 
+                
+            </p>
+        </div>
+        
+    </div>
+
+    <div id="fixed-image-container">
+        <img id="fixed-image" src="OIP (1).jpg" alt="Fixed Image">
+    </div>
+
+    <div id="countdown"></div>
+
+</script>
+
+<div id="countdown"></div>
+<script>
+    const countdown = document.getElementById('countdown');
+
+    function updateCountdown() {
+        const targetDate = new Date("2023-11-01 00:00:00");
+
+        const currentDate = new Date();
+        const timeRemaining = targetDate - currentDate;
+
+        if (timeRemaining <= 0) {
+            countdown.innerHTML = 'Deadline has passed';
+        } else {
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+        }
+    }
+
+    // Initial call to set the countdown
+    updateCountdown();
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>

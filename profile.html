@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <style>
+  /* Basic CSS for responsiveness */
+  body {
+            
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;    
+            
+        }
+
+        #countdown {
+            font-size: 36px;
+            color: grey;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f3f3f3;
+            z-index:100;
+            opacity:1;
+            font-family:'Courier New', Courier, monospace;
+        }
+        .background {
+            background: url(gettyimages-1140596499-612x612.jpg) no-repeat center center fixed;
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust the opacity here */
+            z-index: -1;
+        }
+        a:link{
+             /* Style for the navigation links (anchors) */
+          
+           text-decoration: none;
+           color: #ffffff; /* Set the text color to white or your desired color */
+           font-weight: bold; /* Optionally make the text bold */
+           transition: color 0.3s; /* Add a smooth color transition effect */
+           
+           border-radius:2px;
+        }
+
+             /* Hover effect for navigation links */
+        a:hover {
+           color: #ff5733; /* Change the color on hover */
+           background-color:white ;
+           border-radius:2px ;
+        }
+
+
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-profile {
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="background"></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="online_jobs.html">Go Back</a></li>
+                
+            </ul>
+        </nav>
+
+    
+    
+            <div class="container">
+                <div class="user-profile">
+                    <h2>DEVELOPERS</h2>
+                    <div id="profile-info">
+                        <!-- Display user information here -->
+                    </div>
+            
+                </div>
+            </div>
+    
+            <script>
+                // Sample user data
+const userData = {
+    firstName: "BITMAP",
+    lastName: "ASSOCIATES",
+    email: "bitmap.developers254@gmail.com",
+    age:"Celebrating 3rd Anniverssary",
+};
+
+// Function to display user information
+function displayUserInfo() {
+    const profileInfo = document.getElementById("profile-info");
+    profileInfo.innerHTML = `
+        <p><strong>Name:</strong> ${userData.firstName} ${userData.lastName}</p>
+        <p><strong>Email:</strong> ${userData.email}</p>
+        <p><strong>Age:</strong> ${userData.age}</p>
+    `;
+}
+
+// Initial display of user information
+displayUserInfo();
+
+
+            </script>
+    
+
+    <div id="countdown"></div>
+
+</script>
+
+<div id="countdown"></div>
+<script>
+    const countdown = document.getElementById('countdown');
+
+    function updateCountdown() {
+        const targetDate = new Date("2023-11-01 00:00:00");
+
+        const currentDate = new Date();
+        const timeRemaining = targetDate - currentDate;
+
+        if (timeRemaining <= 0) {
+            countdown.innerHTML = 'Deadline has passed';
+        } else {
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+        }
+    }
+
+    // Initial call to set the countdown
+    updateCountdown();
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
+ </body>
+</html>

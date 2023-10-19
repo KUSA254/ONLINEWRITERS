@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+
+</head>
+
+<body>
+   
+    <div class="background"></div>
+
+    
+    
+
+    
+            <style>
+
+#countdown {
+            font-size: 36px;
+            color: grey;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f3f3f3;
+            z-index:100;
+            opacity:1;
+            font-family:'Courier New', Courier, monospace;
+        }
+             /* Basic CSS for responsiveness */
+      body {
+            
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        
+            
+            
+        }
+       
+    
+
+                .container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Adjust padding as needed */
+    text-align: center;
+    width: 100%; /* Use 100% width for responsiveness */
+    max-width: 400px; /* Adjust the maximum width as needed */
+    margin: auto;
+    margin-top:40px;
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+.input-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+.background {
+            background: url(gettyimages-1140596499-612x612.jpg) no-repeat center center fixed;
+            background-size: cover;
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust the opacity here */
+            z-index: -1;
+        }
+
+        .loader {
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #007BFF;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 3s linear infinite;
+        display:none; /* Hide the loader initially */
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+            </style>
+
+        <div class="container">
+            
+            <h2>Create Account</h2>
+            <form id="createAccountForm" action="further_create_account.html">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+               
+
+    <div class="form-group">
+        
+                    <label for="number">Phone Number:</label>
+                    <input type="number" id="number" name="number" required>
+                    
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Optional">
+    </div>
+
+                <div class="form-group">
+                     <label for="password">Password:</label>
+                     <div class="password-input">
+                     <input type="password" id="password" name="password" required>
+                     <button type="button" id="togglePassword">Show Password</button>
+                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="Password2">Confirm Password:</label>
+                    <input type="password" id="Password2" name="Password" required>
+                </div>
+            <button type="button" id="createAccountBtn">Create Account</button>
+
+                <p id="errorMessage" style="color: red;"></p>
+                <div id="loader" class="loader"></div> 
+            </form>
+        
+        </div>
+
+        <script>
+            document.getElementById("createAccountBtn").addEventListener("click", function () {
+                   var number = document.getElementById("number").value;
+                   var password = document.getElementById("password").value;
+                   var errorMessage = document.getElementById("errorMessage");
+                   var loader = document.getElementById("loader");
+           
+                   if (number.trim() === "" || password.trim() === "") {
+                       errorMessage.textContent = "Please fill in all the required fields first.";
+           
+                   }else {
+                       errorMessage.textContent = ""; // Clear any previous error message
+                       loader.style.display = "block"; // Display the loader
+           
+                   // Simulate a delay (you can replace this with actual form submission)
+                       setTimeout(function () {
+                           document.getElementById("createAccountForm").submit();
+                       }, 3000); // Change 2000 to the desired delay time (in milliseconds)
+                   }
+               });
+            
+    
+        
+            
+    
+            // Toggle password visibility
+        
+            var togglePasswordBtn = document.getElementById("togglePassword");
+            var passwordField = document.getElementById("password");
+            var loader = document.getElementById("loader");
+    
+            togglePasswordBtn.addEventListener("click", function() {
+                if (passwordField.type === "password") {
+                    passwordField.type = "text";
+                    togglePasswordBtn.textContent = "Hide Password";
+                } else {
+                    passwordField.type = "password";
+                    togglePasswordBtn.textContent = "Show Password";
+                   
+                      }
+                          
+            });
+        </script>
+       
+       <div id="countdown"></div>
+
+    </script>
+
+    <div id="countdown"></div>
+    <script>
+        const countdown = document.getElementById('countdown');
+    
+        function updateCountdown() {
+            const targetDate = new Date("2023-11-01 00:00:00");
+    
+            const currentDate = new Date();
+            const timeRemaining = targetDate - currentDate;
+    
+            if (timeRemaining <= 0) {
+                countdown.innerHTML = 'Deadline has passed';
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+            }
+        }
+    
+        // Initial call to set the countdown
+        updateCountdown();
+    
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+    </script>
+        </body>
+        </html>
+       
+       
+        
+            

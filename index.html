@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+     
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color:#007BFF;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .background {
+            background: url(gettyimages-1140596499-612x612.jpg) no-repeat center center fixed;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Adjust the opacity here */
+            z-index: -1;
+        }
+
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        p {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color:#0056b3 ;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+        }
+
+        #countdown {
+            font-size: 36px;
+            color: grey;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f3f3f3;
+            z-index:100;
+            opacity:1;
+            font-family:'Courier New', Courier, monospace;
+        }
+    </style>
+
+<body>
+    <div class="background"></div>
+    <header>
+        <h1>La Comrade La Stupido</h1>
+    </header>
+    <div class="container">
+        <h1>Welcome to Our Website</h1>
+        <p>Please select an option:</p>
+        <a href="login.html"><button>Login</button></a>
+        <a href="create_account.html"><button>Create Account</button></a> 
+
+        <div class="forgot-password">
+            <a href="reset-password.html">Forgot Password?</a>
+        </div>
+
+    </div>
+
+    <div id="countdown"></div>
+
+</script>
+
+<div id="countdown"></div>
+<script>
+    const countdown = document.getElementById('countdown');
+
+    function updateCountdown() {
+        const targetDate = new Date("2023-11-01 00:00:00");
+
+        const currentDate = new Date();
+        const timeRemaining = targetDate - currentDate;
+
+        if (timeRemaining <= 0) {
+            countdown.innerHTML = 'Deadline has passed';
+        } else {
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+        }
+    }
+
+    // Initial call to set the countdown
+    updateCountdown();
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
+

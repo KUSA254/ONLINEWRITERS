@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Deadline Countdown</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #countdown {
+            font-size: 36px;
+            color:blue;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your website content here -->
+
+    <div id="countdown"></div>
+
+    <script>
+        const countdown = document.getElementById('countdown');
+
+        function updateCountdown() {
+            const targetDate = new Date("2023-11-01 00:00:00");
+
+            const currentDate = new Date();
+            const timeRemaining = targetDate - currentDate;
+
+            if (timeRemaining <= 0) {
+                countdown.innerHTML = 'Deadline has passed';
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+            }
+        }
+
+        // Initial call to set the countdown
+        updateCountdown();
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+    </script>
+    <a href="index.html">home</a>
+</body>
+</html>
